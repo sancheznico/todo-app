@@ -18,14 +18,15 @@ body {
    MAIN CONTAINER
 ========================================================= */
 .container {
-  width: 480px;
-  margin: 30px auto;
+  width: 90%;
+  max-width: 480px;
+  margin: 20px auto;
   background: rgba(255, 255, 255, 0.05);
-  padding: 35px;
+  padding: 25px;
   border-radius: 16px;
   color: white;
-  font-family: "Poppins", sans-serif;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
 }
 
 /* =========================================================
@@ -33,8 +34,8 @@ body {
 ========================================================= */
 h1 {
   text-align: center;
-  font-size: 30px;
-  margin-bottom: 30px;
+  font-size: 2rem;
+  margin-bottom: 25px;
   color: #d0d0d0;
   text-shadow: 0 0 12px rgba(0, 150, 255, 0.4);
 }
@@ -44,37 +45,41 @@ h1 {
 ========================================================= */
 .input-group {
   display: flex;
-  gap: 12px;
-  margin-bottom: 32px; /* spacing below Add button */
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
-input {
-  flex: 1;
-  padding: 14px;
-  border-radius: 14px;
+input,
+.category-input {
+  flex: 1 1 auto;
+  padding: 12px;
+  border-radius: 12px;
   border: none;
-  font-size: 15px;
+  font-size: 1rem;
   color: #fff;
   background: #2b2b2b;
   outline: none;
+  box-sizing: border-box;
 }
 
-input:focus {
+input:focus,
+.category-input:focus {
   background: #3a3a3a;
   transform: scale(1.03);
 }
 
 /* =========================================================
-   ADD BUTTON (Flat design, no glow)
+   ADD BUTTON
 ========================================================= */
 .add-btn {
-  padding: 14px 22px;
+  padding: 12px 18px;
   border: none;
   background: #2563eb;
   color: white;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 600;
   transition: background 0.2s ease, transform 0.2s ease;
 }
@@ -95,10 +100,9 @@ details {
 }
 
 summary {
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,20 +115,9 @@ details[open] summary {
 
 .category-section .todo-list-section {
   margin-top: 10px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
-.category-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  border: none;
-  background: #1e1e1e;
-  color: white;
-}
-
-/* Category title strikethrough when all tasks are done */
 .category-done {
   text-decoration: line-through;
   text-decoration-style: dashed;
@@ -133,7 +126,7 @@ details[open] summary {
 }
 
 .category-counter {
-  font-size: 14px;
+  font-size: 0.85rem;
   color: #60a5fa;
   margin-left: 10px;
 }
@@ -146,13 +139,14 @@ details[open] summary {
   align-items: center;
   justify-content: space-between;
   background: #1a1a1a;
-  padding: 12px;
+  padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 .task-text {
-  flex: 1;
+  flex: 1 1 auto;
   margin-left: 5px;
 }
 
@@ -192,10 +186,10 @@ button:hover {
   opacity: 0.9;
 }
 
-.read-btn  { background: #2563eb; }
-.edit-btn  { background: #16a34a; }
-.save-btn  { background: #22c55e; }
-.delete-btn{ background: #dc2626; }
+.read-btn { background: #2563eb; }
+.edit-btn { background: #16a34a; }
+.save-btn { background: #22c55e; }
+.delete-btn { background: #dc2626; }
 
 /* =========================================================
    MODAL
@@ -215,8 +209,9 @@ button:hover {
   background: #242424;
   padding: 25px;
   border-radius: 14px;
-  max-width: 400px;
-  width: 90%;
+  max-width: 90%;
+  width: 400px;
+  box-sizing: border-box;
 }
 
 .modal-title {
@@ -254,41 +249,66 @@ button:hover {
   from { opacity: 0; transform: translateY(-25px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-/* Title / Category Input */
-.category-input {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 12px;
-  border-radius: 14px;
-  border: none;
-  background: #2b2b2b;   /* same as task input */
-  color: white;
-  font-size: 15px;
-  outline: none;
+
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES
+========================================================= */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  summary {
+    font-size: 1rem;
+  }
+
+  .category-counter {
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-left: 3px;
+  }
+
+  .modal-box {
+    width: 90%;
+    padding: 20px;
+  }
 }
 
-.category-input:focus {
-  background: #3a3a3a;  /* same hover effect as task input */
-  transform: scale(1.03);
-}
-/* ===============================
-   ALL INPUT FIELDS (Title + Task)
-=============================== */
-input,
-.category-input {
-  width: 100%;
-  padding: 14px;
-  border-radius: 14px;
-  border: none;
-  background: #2b2b2b;  /* unified background */
-  color: white;
-  font-size: 15px;
-  outline: none;
-  box-sizing: border-box; /* ensures padding doesn’t break alignment */
-}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
 
-input:focus,
-.category-input:focus {
-  background: #3a3a3a;  /* focus effect */
-  transform: scale(1.03);
+  input,
+  .category-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .task-text {
+    font-size: 14px;
+  }
+
+  .add-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
