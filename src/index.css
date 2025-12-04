@@ -1,0 +1,294 @@
+/* =========================================================
+   GLOBAL PAGE
+========================================================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  color: #fff;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+.container {
+  width: 480px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 35px;
+  border-radius: 16px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #d0d0d0;
+  text-shadow: 0 0 12px rgba(0, 150, 255, 0.4);
+}
+
+/* =========================================================
+   INPUT BAR
+========================================================= */
+.input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px; /* spacing below Add button */
+}
+
+input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 15px;
+  color: #fff;
+  background: #2b2b2b;
+  outline: none;
+}
+
+input:focus {
+  background: #3a3a3a;
+  transform: scale(1.03);
+}
+
+/* =========================================================
+   ADD BUTTON (Flat design, no glow)
+========================================================= */
+.add-btn {
+  padding: 14px 22px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+  background: #1e40af;
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   CATEGORY SECTION
+========================================================= */
+details {
+  background: rgba(0, 183, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+
+summary {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #00b7ff;
+}
+
+details[open] summary {
+  color: #00ffcc;
+}
+
+.category-section .todo-list-section {
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+.category-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #1e1e1e;
+  color: white;
+}
+
+/* Category title strikethrough when all tasks are done */
+.category-done {
+  text-decoration: line-through;
+  text-decoration-style: dashed;
+  color: #999;
+  font-style: italic;
+}
+
+.category-counter {
+  font-size: 14px;
+  color: #60a5fa;
+  margin-left: 10px;
+}
+
+/* =========================================================
+   TODO ITEM
+========================================================= */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a1a1a;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.task-text {
+  flex: 1;
+  margin-left: 5px;
+}
+
+.todo-item.done .task-text {
+  text-decoration: line-through;
+  color: #999;
+  opacity: 0.6;
+}
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+.checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-left: 5px;
+  font-weight: 500;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+.read-btn  { background: #2563eb; }
+.edit-btn  { background: #16a34a; }
+.save-btn  { background: #22c55e; }
+.delete-btn{ background: #dc2626; }
+
+/* =========================================================
+   MODAL
+========================================================= */
+.modal-overlay {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #242424;
+  padding: 25px;
+  border-radius: 14px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-title {
+  color: #60a5fa;
+  margin: 0 0 10px 0;
+}
+
+.modal-text {
+  margin: 15px 0 20px;
+  line-height: 1.5;
+}
+
+.close-btn {
+  background: #444;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #555;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Title / Category Input */
+.category-input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  border: none;
+  background: #2b2b2b;   /* same as task input */
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.category-input:focus {
+  background: #3a3a3a;  /* same hover effect as task input */
+  transform: scale(1.03);
+}
+/* ===============================
+   ALL INPUT FIELDS (Title + Task)
+=============================== */
+input,
+.category-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #2b2b2b;  /* unified background */
+  color: white;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box; /* ensures padding doesn’t break alignment */
+}
+
+input:focus,
+.category-input:focus {
+  background: #3a3a3a;  /* focus effect */
+  transform: scale(1.03);
+}

@@ -1,0 +1,341 @@
+/* ---------- Global ---------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
+  color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #1f1f1f;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ff6600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #f5f5f5;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #ff9900;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #1f1f1f;
+  color: #f5f5f5;
+  padding: 30px;
+  text-align: center;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  margin: 0 15px;
+  color: #f5f5f5;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #ff9900;
+}
+
+/* ---------- Hero Banner ---------- */
+.hero {
+  background: url('https://via.placeholder.com/1400x500') center/cover no-repeat;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero-text button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff6600;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.hero-text button:hover {
+  background: #e65c00;
+}
+
+/* ---------- Featured Products ---------- */
+.featured {
+  max-width: 1400px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+}
+
+.featured h2 {
+  font-size: 2rem;
+  color: #ff6600;
+  margin-bottom: 20px;
+}
+
+.featured-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+}
+
+.featured-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.featured-scroll::-webkit-scrollbar-thumb {
+  background: #ff6600;
+  border-radius: 4px;
+}
+
+.featured-card {
+  min-width: 250px;
+  background: #1f1f1f;
+  border-radius: 15px;
+  padding: 20px;
+  flex: 0 0 auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.featured-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+
+.featured-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.featured-card h3 {
+  margin-bottom: 10px;
+  color: #ff6600;
+}
+
+.featured-card .price {
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.featured-card button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ff6600;
+  color: #fff;
+  font-weight: 500;
+}
+
+.featured-card button:hover {
+  background: #e65c00;
+}
+
+/* ---------- About Short Section ---------- */
+.about-short {
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.about-short h2 {
+  font-size: 2rem;
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.about-short p {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.contact h1 {
+  font-size: 2.5rem;
+  color: #ff6600;
+  margin-bottom: 30px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px;
+  border-radius: 8px;
+  background: #1f1f1f;
+  color: #f5f5f5;
+  border: 1px solid #333;
+  outline: none;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #ff6600;
+}
+
+.contact button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ff6600;
+  color: white;
+  font-weight: 500;
+}
+
+.contact button:hover {
+  background: #e65c00;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .featured-card {
+    min-width: 200px;
+  }
+}
+/* ---------- Slider ---------- */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: all 0.8s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide.active {
+  left: 0;
+  opacity: 1;
+}
+
+.slide-content h1 {
+  font-size: 3rem;
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.slide-content p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.slide-content button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff6600;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.slide-content button:hover {
+  background: #e65c00;
+}
+
+/* Slider dots */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background: #ff6600;
+  opacity: 1;
+}
